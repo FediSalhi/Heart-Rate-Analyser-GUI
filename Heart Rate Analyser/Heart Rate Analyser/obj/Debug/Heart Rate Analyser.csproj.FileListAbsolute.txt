@@ -1,0 +1,10 @@
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\Heart Rate Analyser.exe.config
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\Heart Rate Analyser.exe
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\Heart Rate Analyser.pdb
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.csprojAssemblyReference.cache
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart_Rate_Analyser.Form1.resources
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart_Rate_Analyser.Properties.Resources.resources
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.csproj.GenerateResource.cache
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.csproj.CoreCompileInputs.cache
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.exe
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.pdb
