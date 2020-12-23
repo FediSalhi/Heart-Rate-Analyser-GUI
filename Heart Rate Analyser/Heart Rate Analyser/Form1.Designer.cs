@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1_comPort = new System.Windows.Forms.ComboBox();
+            this.button2_close = new System.Windows.Forms.Button();
+            this.button1_open = new System.Windows.Forms.Button();
             this.comboBox2_baudRate = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1_open = new System.Windows.Forms.Button();
-            this.button2_close = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1_comPort = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.verticalProgressBar1_statusCom = new Heart_Rate_Analyser.VerticalProgressBar();
             this.panel1.SuspendLayout();
@@ -55,6 +55,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(882, 500);
             this.panel1.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(298, 309);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 23);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Sensor Measurement ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(262, 351);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(256, 30);
+            this.textBox1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -73,25 +90,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "COM PORT SETTINGS";
             // 
-            // label1
+            // button2_close
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "COM PORT :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.button2_close.Location = new System.Drawing.Point(648, 56);
+            this.button2_close.Name = "button2_close";
+            this.button2_close.Size = new System.Drawing.Size(122, 37);
+            this.button2_close.TabIndex = 5;
+            this.button2_close.Text = "CLOSE";
+            this.button2_close.UseVisualStyleBackColor = true;
+            this.button2_close.Click += new System.EventHandler(this.button2_close_Click);
             // 
-            // comboBox1_comPort
+            // button1_open
             // 
-            this.comboBox1_comPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1_comPort.FormattingEnabled = true;
-            this.comboBox1_comPort.Location = new System.Drawing.Point(196, 39);
-            this.comboBox1_comPort.Name = "comboBox1_comPort";
-            this.comboBox1_comPort.Size = new System.Drawing.Size(164, 31);
-            this.comboBox1_comPort.TabIndex = 1;
-            this.comboBox1_comPort.DropDown += new System.EventHandler(this.comboBox1_comPort_DropDown);
+            this.button1_open.Location = new System.Drawing.Point(509, 56);
+            this.button1_open.Name = "button1_open";
+            this.button1_open.Size = new System.Drawing.Size(122, 37);
+            this.button1_open.TabIndex = 4;
+            this.button1_open.Text = "OPEN";
+            this.button1_open.UseVisualStyleBackColor = true;
+            this.button1_open.Click += new System.EventHandler(this.button1_open_Click);
             // 
             // comboBox2_baudRate
             // 
@@ -114,41 +131,29 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "BAUD RATE : ";
             // 
-            // button1_open
+            // comboBox1_comPort
             // 
-            this.button1_open.Location = new System.Drawing.Point(509, 56);
-            this.button1_open.Name = "button1_open";
-            this.button1_open.Size = new System.Drawing.Size(122, 37);
-            this.button1_open.TabIndex = 4;
-            this.button1_open.Text = "OPEN";
-            this.button1_open.UseVisualStyleBackColor = true;
-            this.button1_open.Click += new System.EventHandler(this.button1_open_Click);
+            this.comboBox1_comPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1_comPort.FormattingEnabled = true;
+            this.comboBox1_comPort.Location = new System.Drawing.Point(196, 39);
+            this.comboBox1_comPort.Name = "comboBox1_comPort";
+            this.comboBox1_comPort.Size = new System.Drawing.Size(164, 31);
+            this.comboBox1_comPort.TabIndex = 1;
+            this.comboBox1_comPort.DropDown += new System.EventHandler(this.comboBox1_comPort_DropDown);
             // 
-            // button2_close
+            // label1
             // 
-            this.button2_close.Location = new System.Drawing.Point(648, 56);
-            this.button2_close.Name = "button2_close";
-            this.button2_close.Size = new System.Drawing.Size(122, 37);
-            this.button2_close.TabIndex = 5;
-            this.button2_close.Text = "CLOSE";
-            this.button2_close.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(76, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "COM PORT :";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // serialPort1
             // 
-            this.textBox1.Location = new System.Drawing.Point(262, 351);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(256, 30);
-            this.textBox1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 309);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 23);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Sensor Measurement ";
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // verticalProgressBar1_statusCom
             // 
@@ -171,6 +176,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hear Rate Analyser";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -14,6 +14,7 @@ namespace Heart_Rate_Analyser
         [STAThread]
         static void Main()
         {
+            Global_Variables.init_serial_uart_channel();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
