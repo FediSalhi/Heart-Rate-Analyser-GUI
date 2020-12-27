@@ -8,3 +8,19 @@ C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rat
 C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.csproj.CoreCompileInputs.cache
 C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.exe
 C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.pdb
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\ZedGraph.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\ZedGraph.xml
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Designer\Desktop\BLM5135_Final_Project\Hear Rate Analyser GUI\Heart Rate Analyser\Heart Rate Analyser\obj\Debug\Heart Rate Analyser.csproj.CopyComplete

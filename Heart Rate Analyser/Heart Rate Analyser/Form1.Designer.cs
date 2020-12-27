@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.verticalProgressBar1_statusCom = new Heart_Rate_Analyser.VerticalProgressBar();
             this.button2_close = new System.Windows.Forms.Button();
             this.button1_open = new System.Windows.Forms.Button();
             this.comboBox2_baudRate = new System.Windows.Forms.ComboBox();
@@ -40,14 +44,16 @@
             this.comboBox1_comPort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.verticalProgressBar1_statusCom = new Heart_Rate_Analyser.VerticalProgressBar();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.chart1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -59,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 309);
+            this.label3.Location = new System.Drawing.Point(631, 384);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(176, 23);
             this.label3.TabIndex = 1;
@@ -67,7 +73,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(262, 351);
+            this.textBox1.Location = new System.Drawing.Point(578, 419);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(256, 30);
@@ -90,6 +96,14 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "COM PORT SETTINGS";
+            // 
+            // verticalProgressBar1_statusCom
+            // 
+            this.verticalProgressBar1_statusCom.Location = new System.Drawing.Point(24, 42);
+            this.verticalProgressBar1_statusCom.Name = "verticalProgressBar1_statusCom";
+            this.verticalProgressBar1_statusCom.Size = new System.Drawing.Size(25, 65);
+            this.verticalProgressBar1_statusCom.TabIndex = 0;
+            this.verticalProgressBar1_statusCom.Value = 40;
             // 
             // button2_close
             // 
@@ -160,13 +174,22 @@
             this.serialPort1.ReceivedBytesThreshold = 20;
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
-            // verticalProgressBar1_statusCom
+            // chart1
             // 
-            this.verticalProgressBar1_statusCom.Location = new System.Drawing.Point(24, 42);
-            this.verticalProgressBar1_statusCom.Name = "verticalProgressBar1_statusCom";
-            this.verticalProgressBar1_statusCom.Size = new System.Drawing.Size(25, 65);
-            this.verticalProgressBar1_statusCom.TabIndex = 0;
-            this.verticalProgressBar1_statusCom.Value = 40;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(39, 23);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(757, 305);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
             // 
             // Form1
             // 
@@ -187,6 +210,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,6 +229,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.IO.Ports.SerialPort serialPort1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

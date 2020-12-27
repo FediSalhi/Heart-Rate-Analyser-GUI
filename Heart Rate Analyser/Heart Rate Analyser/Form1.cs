@@ -19,8 +19,13 @@ namespace Heart_Rate_Analyser
         int counter = 0;
         int returned = 0;
 
+        long max = 30;
+        long min = 0;
+
         /* used to update textBox every 1 second */
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+
+        
         
         
 
@@ -39,6 +44,22 @@ namespace Heart_Rate_Analyser
         {
             Simple_Communication.communication_loop();
             textBox1.Text = Global_Variables.GL_sensor_measurement.ToString();
+
+            chart1.ChartAreas[0].AxisX.Minimum = min;
+            chart1.ChartAreas[0].AxisX.Maximum = max;
+
+            chart1.ChartAreas[0].AxisX.Minimum = 0;
+            chart1.ChartAreas[0].AxisX.Maximum = 3300;
+
+            chart1.ChartAreas[0].AxisX.ScaleView.Zoom(min, max);
+
+            chart1.Series[0].Points.AddXY((min + max) / 2, Global_Variables.GL_sensor_measurement);
+
+            max++;
+            min++;
+
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -125,7 +146,8 @@ namespace Heart_Rate_Analyser
            // received_byte = (byte)serialPort1.ReadByte();
             //string received_byte = serialPort1.ReadExisting();
             okunan = serialPort1.Read(buffer, offset, count);
-
+            //add timer out exception
+            //https://docs.microsoft.com/tr-tr/dotnet/api/system.timeoutexception?view=net-5.0
 
 
             //Console.WriteLine(received_byte);
