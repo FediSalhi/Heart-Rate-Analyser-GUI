@@ -14,7 +14,11 @@ namespace Heart_Rate_Analyser
         public static uint GL_buffer_last_u32  = 0;
 
         public static Serial_uart_channel_t GL_serial_uart_channel_t;
-        
+
+        public static double GL_sensor_measurement = 0;
+
+        static public uint GL_task_counter_u32 = 0;
+
 
 
         public static void init_serial_uart_channel()

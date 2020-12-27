@@ -72,6 +72,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(256, 30);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox1
             // 
@@ -121,6 +122,7 @@
             this.comboBox2_baudRate.Name = "comboBox2_baudRate";
             this.comboBox2_baudRate.Size = new System.Drawing.Size(164, 31);
             this.comboBox2_baudRate.TabIndex = 3;
+            this.comboBox2_baudRate.SelectedIndexChanged += new System.EventHandler(this.comboBox2_baudRate_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -153,6 +155,9 @@
             // 
             // serialPort1
             // 
+            this.serialPort1.BaudRate = 115200;
+            this.serialPort1.ReadTimeout = 10;
+            this.serialPort1.ReceivedBytesThreshold = 20;
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
             // verticalProgressBar1_statusCom

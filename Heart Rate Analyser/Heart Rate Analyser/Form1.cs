@@ -17,10 +17,28 @@ namespace Heart_Rate_Analyser
         byte[] rx_buffer = new byte[100];
         int received_bytes = 0;
         int counter = 0;
+        int returned = 0;
+
+        /* used to update textBox every 1 second */
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        
+        
 
         public Form1()
         {
             InitializeComponent();
+
+            timer.Interval = (10); //ms
+            timer.Tick += new EventHandler(update_text_box);
+            timer.Start();
+        }
+
+
+        /* update textbox with new measurment */
+        private void update_text_box(object sender, EventArgs e)
+        {
+            Simple_Communication.communication_loop();
+            textBox1.Text = Global_Variables.GL_sensor_measurement.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,7 +46,7 @@ namespace Heart_Rate_Analyser
             button1_open.Enabled = true;
             button2_close.Enabled = false;
             verticalProgressBar1_statusCom.Value = 0;
-            comboBox2_baudRate.Text = "9600";
+            comboBox2_baudRate.Text = "115200";
 
         }
 
@@ -96,25 +114,49 @@ namespace Heart_Rate_Analyser
         {
             //serialPort1.Read(rx_buffer, received_bytes, counter);
 
-            byte received_byte;
-            received_byte = (byte)serialPort1.ReadByte();
 
-            Global_Variables.GL_rx_buffer_u8[Global_Variables.GL_buffer_last_u32] = received_byte;
-            Global_Variables.GL_buffer_last_u32++;
-            if (Global_Variables.GL_buffer_last_u32 >= Simple_Communication.MAX_DATA_LENGTH)
+            byte received_byte = 0;
+
+            byte[] buffer  =  new byte[20];
+            int offset = 0;
+            int count = 20;
+            int okunan = 0;
+            int index = 0;
+           // received_byte = (byte)serialPort1.ReadByte();
+            //string received_byte = serialPort1.ReadExisting();
+            okunan = serialPort1.Read(buffer, offset, count);
+
+
+
+            //Console.WriteLine(received_byte);
+
+            //Global_Variables.GL_rx_buffer_u8[Global_Variables.GL_buffer_last_u32] = received_byte;
+            //Global_Variables.GL_buffer_last_u32++;
+
+            for (index = 0; index < okunan; index++)
             {
-                Global_Variables.GL_buffer_last_u32 = 0;
+                Global_Variables.GL_rx_buffer_u8[Global_Variables.GL_buffer_last_u32] = buffer[index];
+                Global_Variables.GL_buffer_last_u32++;
+
+                if (Global_Variables.GL_buffer_last_u32 >= Simple_Communication.MAX_DATA_LENGTH)
+                {
+                    Global_Variables.GL_buffer_last_u32 = 0;
+                }
             }
 
-            if (Global_Variables.GL_buffer_last_u32 % 14 == 0)
-            {
-                this.BeginInvoke(new EventHandler(ProcessData));
-            }
+
         }
 
-        private void ProcessData(object sender, EventArgs e)
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Simple_Communication.capture_packet_from_bytes();
+
+        }
+
+        private void comboBox2_baudRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
