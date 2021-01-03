@@ -9,18 +9,26 @@ namespace Heart_Rate_Analyser
 
     public class Global_Variables
     {
+        /* ring buffer */
         public static byte[] GL_rx_buffer_u8 = new byte[Simple_Communication.MAX_DATA_LENGTH];       
-        public static uint GL_buffer_first_u32 = 0; /* using static to get this variable from another class without creating an instance */
+        public static uint GL_buffer_first_u32 = 0; 
         public static uint GL_buffer_last_u32  = 0;
 
+        /*  buffer to save measurements */
+        public static double[] GL_rx_measurement_u64 = new double[1000];
+        public static uint GL_measurements_last_u32 = 0;
+
+        /* analysis result */
+        string analysis_result_string = "Result Is Not Read ... Please Wait";
+
+
+        /* serial channel */
         public static Serial_uart_channel_t GL_serial_uart_channel_t;
 
+        /* sensor measurement */
         public static double GL_sensor_measurement = 0;
 
-        static public uint GL_task_counter_u32 = 0;
-
-
-
+        /* init serial channel */
         public static void init_serial_uart_channel()
         {
             GL_serial_uart_channel_t.simple_com_packet_t.data_u8 = new byte[8];
@@ -39,7 +47,6 @@ namespace Heart_Rate_Analyser
 
 
         }
-
 
     }
 

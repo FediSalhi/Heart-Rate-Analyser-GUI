@@ -49,7 +49,6 @@ namespace Heart_Rate_Analyser
         //void (*packet_solver)(Simple_communication_packet_t*); implement packet_solver
     }
 
-
     public class Simple_Communication
     {
 
@@ -58,7 +57,6 @@ namespace Heart_Rate_Analyser
         public const long MAX_DATA_LENGTH = 20000;
         public const byte PC = 0x00;
         public const byte MSP430 = 0x01;
-
         public const byte HEART_RATE_MEASUREMENT_PACKET = 0x00;
 
         public static short control_if_there_is_data_to_capture()
@@ -267,6 +265,18 @@ namespace Heart_Rate_Analyser
         public static void combine_float64(byte[] data)
         {
             Global_Variables.GL_sensor_measurement = System.BitConverter.ToDouble(data, 0);
+
+            Global_Variables.GL_rx_measurement_u64[Global_Variables.GL_measurements_last_u32] = Global_Variables.GL_sensor_measurement;
+            Global_Variables.GL_measurements_last_u32++;
+
+            Console.WriteLine(Global_Variables.GL_measurements_last_u32);
+
+            if (Global_Variables.GL_measurements_last_u32 >= 1000)
+            {
+                
+                Global_Variables.GL_measurements_last_u32 = 0;
+                Artificial_Intelligence.diagnostig_started = true;
+            }
 
         }
 

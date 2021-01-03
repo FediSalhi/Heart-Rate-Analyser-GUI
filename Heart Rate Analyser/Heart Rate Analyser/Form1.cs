@@ -54,9 +54,11 @@ namespace Heart_Rate_Analyser
             chart1.ChartAreas[0].AxisX.ScaleView.Zoom(min, max);
 
             chart1.Series[0].Points.AddXY((min + max) / 2, Global_Variables.GL_sensor_measurement);
-
             max++;
             min++;
+
+            /* update progress bar */
+            progressBar1.Value = (int)(Global_Variables.GL_measurements_last_u32 / 10);
 
 
 
@@ -95,6 +97,7 @@ namespace Heart_Rate_Analyser
                 button1_open.Enabled = false;
                 button2_close.Enabled = true;
                 verticalProgressBar1_statusCom.Value = 100;
+                
 
             }
             catch (Exception error)
@@ -143,9 +146,20 @@ namespace Heart_Rate_Analyser
             int count = 20;
             int okunan = 0;
             int index = 0;
-           // received_byte = (byte)serialPort1.ReadByte();
+            // received_byte = (byte)serialPort1.ReadByte();
             //string received_byte = serialPort1.ReadExisting();
-            okunan = serialPort1.Read(buffer, offset, count);
+
+
+            try
+            {
+                okunan = serialPort1.Read(buffer, offset, count);
+            }
+
+            catch (TimeoutException er)
+            {
+                Console.WriteLine(er);
+            }
+
             //add timer out exception
             //https://docs.microsoft.com/tr-tr/dotnet/api/system.timeoutexception?view=net-5.0
 
@@ -179,6 +193,20 @@ namespace Heart_Rate_Analyser
         private void comboBox2_baudRate_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_signature_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_start_analysis_Click(object sender, EventArgs e)
+        {
+            if (Artificial_Intelligence.diagnostig_started == true)
+            {
+                Artificial_Intelligence.get_prediction_cnn();
+            }
+            
         }
     }
 }
