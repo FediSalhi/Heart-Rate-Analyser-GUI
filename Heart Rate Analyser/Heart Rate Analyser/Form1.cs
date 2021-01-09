@@ -33,7 +33,7 @@ namespace Heart_Rate_Analyser
         {
             InitializeComponent();
 
-            timer.Interval = (10); //ms
+            timer.Interval = (120); //ms
             timer.Tick += new EventHandler(update_text_box);
             timer.Start();
         }
@@ -48,17 +48,30 @@ namespace Heart_Rate_Analyser
             chart1.ChartAreas[0].AxisX.Minimum = min;
             chart1.ChartAreas[0].AxisX.Maximum = max;
 
+            chart1.ChartAreas[0].AxisY.Minimum = 1000;
+
             chart1.ChartAreas[0].AxisX.Minimum = 0;
-            chart1.ChartAreas[0].AxisX.Maximum = 3300;
+            chart1.ChartAreas[0].AxisX.Maximum = 100;
 
-            chart1.ChartAreas[0].AxisX.ScaleView.Zoom(min, max);
+            //chart1.ChartAreas[0].AxisX.ScaleView.Zoom(min, max);
 
-            chart1.Series[0].Points.AddXY((min + max) / 2, Global_Variables.GL_sensor_measurement);
-            max++;
-            min++;
+            if (Global_Variables.GL_sensor_measurement > 1000)
+            {
+                chart1.Series[0].Points.AddXY(min, Global_Variables.GL_sensor_measurement);
+                //max++;
+                min++;
+                if (min >= 100)
+                {
+                    min = 0;
+                    chart1.Series[0].Points.Clear();
+                }
+            }
 
             /* update progress bar */
             progressBar1.Value = (int)(Global_Variables.GL_measurements_last_u32 / 10);
+
+            /* update result text box */
+            richTextBox1.Text = Global_Variables.GL_analysis_result_string;
 
 
 
@@ -68,7 +81,7 @@ namespace Heart_Rate_Analyser
         {
             button1_open.Enabled = true;
             button2_close.Enabled = false;
-            verticalProgressBar1_statusCom.Value = 0;
+            progressBar2.Value = 0;
             comboBox2_baudRate.Text = "115200";
 
         }
@@ -96,7 +109,7 @@ namespace Heart_Rate_Analyser
 
                 button1_open.Enabled = false;
                 button2_close.Enabled = true;
-                verticalProgressBar1_statusCom.Value = 100;
+                progressBar2.Value = 100;
                 
 
             }

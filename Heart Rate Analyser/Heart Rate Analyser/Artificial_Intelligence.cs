@@ -64,7 +64,6 @@ namespace Heart_Rate_Analyser
                 txt += element.ToString() + " ";
             }
             psi.Arguments = $"\"{script}\" \"{txt}\"";
-            Console.Write(txt);
             psi.UseShellExecute = false;
             psi.CreateNoWindow = true;
             psi.RedirectStandardOutput = true;
@@ -77,9 +76,10 @@ namespace Heart_Rate_Analyser
                 //errors = process.StandardError.ReadToEnd();
                 results = process.StandardOutput.ReadToEnd();
             }
-            Console.WriteLine("ERRORS");
-            Console.WriteLine(errors);
-            Console.WriteLine();
+            Global_Variables.GL_analysis_result_string = results;
+            //Console.WriteLine("ERRORS");
+            //Console.WriteLine(errors);
+            //Console.WriteLine();
             Console.WriteLine("Results");
             Console.WriteLine(results);
         }

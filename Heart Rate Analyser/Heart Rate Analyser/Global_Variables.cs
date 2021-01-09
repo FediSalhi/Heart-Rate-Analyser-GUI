@@ -19,7 +19,7 @@ namespace Heart_Rate_Analyser
         public static uint GL_measurements_last_u32 = 0;
 
         /* analysis result */
-        string analysis_result_string = "Result Is Not Read ... Please Wait";
+        public static string GL_analysis_result_string = "Result Is Not Ready ... Please Wait";
 
 
         /* serial channel */

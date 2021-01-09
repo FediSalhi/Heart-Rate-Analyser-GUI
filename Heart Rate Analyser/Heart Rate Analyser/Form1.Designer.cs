@@ -60,7 +60,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.verticalProgressBar1_statusCom = new Heart_Rate_Analyser.VerticalProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -73,8 +73,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.progressBar2);
             this.groupBox1.Controls.Add(this.label4_signature);
-            this.groupBox1.Controls.Add(this.verticalProgressBar1_statusCom);
             this.groupBox1.Controls.Add(this.button2_close);
             this.groupBox1.Controls.Add(this.button1_open);
             this.groupBox1.Controls.Add(this.comboBox2_baudRate);
@@ -264,15 +264,18 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.Gainsboro;
+            this.chart1.BorderlineWidth = 10;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(10, 29);
             this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
+            series1.MarkerBorderWidth = 3;
             series1.MarkerSize = 10;
             series1.Name = "ECG Measurement";
             this.chart1.Series.Add(series1);
@@ -354,13 +357,12 @@
             this.ımageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // verticalProgressBar1_statusCom
+            // progressBar2
             // 
-            this.verticalProgressBar1_statusCom.Location = new System.Drawing.Point(24, 42);
-            this.verticalProgressBar1_statusCom.Name = "verticalProgressBar1_statusCom";
-            this.verticalProgressBar1_statusCom.Size = new System.Drawing.Size(25, 65);
-            this.verticalProgressBar1_statusCom.TabIndex = 0;
-            this.verticalProgressBar1_statusCom.Value = 40;
+            this.progressBar2.Location = new System.Drawing.Point(12, 56);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(48, 30);
+            this.progressBar2.TabIndex = 7;
             // 
             // Form1
             // 
@@ -404,7 +406,7 @@
         private VerticalProgressBar verticalProgressBar1_statusCom;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;  
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox1;
@@ -421,6 +423,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ImageList ımageList1;
         private System.Windows.Forms.Label label4_signature;
+        private System.Windows.Forms.ProgressBar progressBar2;
     }
 }
 
